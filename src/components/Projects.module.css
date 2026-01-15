@@ -1,0 +1,248 @@
+/* Horizontal Scroll Layout */
+.horizontalScroll {
+    display: flex;
+    gap: var(--space-xl);
+    overflow-x: auto;
+    padding: var(--space-md) 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+.horizontalScroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.horizontalScroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.horizontalScroll::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+.cardWrapper {
+    flex: 0 0 360px;
+    scroll-snap-align: start;
+}
+
+.projectCard {
+    height: 100%;
+    min-height: 240px;
+}
+
+.cardContent {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+}
+
+.titleRow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.statusDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.statusLive .statusDot {
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+.statusDev .statusDot {
+    background: #fbbf24;
+}
+
+.links {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.iconLink {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 1rem;
+}
+
+.iconLink:hover {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--bg-primary);
+    transform: rotate(-15deg);
+}
+
+/* Summary / Points */
+.summary {
+    flex: 1;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    min-height: 80px;
+}
+
+.points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.points li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: var(--space-xs);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.points li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Tech Stack */
+.techWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border);
+}
+
+.techItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+    transition: color 0.2s;
+}
+
+.techIcon {
+    font-size: 0.875rem;
+}
+
+.techItem:hover {
+    color: var(--text-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .cardWrapper {
+        flex: 0 0 320px;
+    }
+
+    .cardContent {
+        padding: var(--space-lg);
+    }
+
+    .title {
+        font-size: 1.375rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontalScroll {
+        flex-direction: column;
+        overflow-x: visible;
+        gap: var(--space-md);
+    }
+
+    .cardWrapper {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .cardContent {
+        padding: var(--space-md);
+    }
+
+    .summary {
+        min-height: 60px;
+        font-size: 0.875rem;
+    }
+
+    .techWrapper {
+        gap: var(--space-xs);
+    }
+
+    .techItem {
+        font-size: 0.75rem;
+        padding: 6px var(--space-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .links {
+        flex-direction: row;
+        gap: var(--space-xs);
+    }
+
+    .iconLink {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+
+    .cardContent {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .summary {
+        font-size: 0.8125rem;
+        min-height: 50px;
+    }
+
+    .techWrapper {
+        flex-wrap: wrap;
+    }
+
+    .techItem {
+        font-size: 0.6875rem;
+    }
+}

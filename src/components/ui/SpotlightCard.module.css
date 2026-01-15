@@ -1,0 +1,26 @@
+.card {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-base);
+}
+
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.spotlight {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    transition: opacity 500ms;
+    z-index: 10;
+}
+
+.content {
+    position: relative;
+    z-index: 20;
+    height: 100%;
+}

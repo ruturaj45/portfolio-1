@@ -18,8 +18,8 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className={styles.headerRow}>
-                        <span className="section-title">About</span>
+                    <span className="section-title">About</span>
+                    <div className={styles.headingRow}>
                         <h2>Who I am</h2>
                         <button
                             className={styles.viewToggle}

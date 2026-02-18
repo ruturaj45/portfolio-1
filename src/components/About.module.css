@@ -69,18 +69,15 @@
     margin-bottom: var(--space-lg);
 }
 
-.headerRow {
+.headingRow {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-md);
+    width: 100%;
 }
 
-.headerRow .section-title {
-    margin-right: var(--space-xs);
-}
-
-.headerRow h2 {
-    flex: 1;
+.headingRow h2 {
     margin: 0;
 }
 

@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import styles from "./Navbar.module.css";
 import ThemeToggle from "./ThemeToggle";
-import VisitorCounter from "./VisitorCounter";
 
 const navLinks = [
     { label: "About", href: "#about" },
@@ -68,7 +67,6 @@ export default function Navbar() {
                 </div>
 
                 <div className={styles.actions}>
-                    <VisitorCounter className={styles.counter} />
                     <ThemeToggle />
                     <button
                         className={styles.mobileToggle}

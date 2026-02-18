@@ -53,17 +53,6 @@
     gap: var(--space-md);
 }
 
-.counter {
-    border-color: var(--accent) !important;
-    color: var(--accent) !important;
-    background: transparent !important;
-}
-
-.counter:hover {
-    background: var(--accent) !important;
-    color: white !important;
-}
-
 .link {
     font-size: 0.875rem;
     color: var(--text-secondary);

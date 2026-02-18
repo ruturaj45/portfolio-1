@@ -1,15 +1,7 @@
 "use client";
 
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
+import { socialLinks } from "@/lib/config";
 import styles from "./Footer.module.css";
-
-const socialLinks = [
-    { icon: FiGithub, href: "https://github.com/vyagh", label: "GitHub" },
-    { icon: FiLinkedin, href: "https://www.linkedin.com/in/shubham-vy", label: "LinkedIn" },
-    { icon: FaXTwitter, href: "https://x.com/vyagh_vy", label: "X" },
-    { icon: FiMail, href: "mailto:vyagh.vy@gmail.com", label: "Email" },
-];
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();

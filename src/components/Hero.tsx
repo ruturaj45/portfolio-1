@@ -2,35 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiDownload } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
+import { FiArrowRight, FiDownload } from "react-icons/fi";
+import { socialLinks } from "@/lib/config";
 import styles from "./Hero.module.css";
 import Image from "next/image";
 
 const OWNER_KEY = "portfolio_owner";
-
-const socialLinks = [
-    {
-        icon: FiGithub,
-        href: "https://github.com/vyagh",
-        label: "GitHub",
-    },
-    {
-        icon: FiLinkedin,
-        href: "https://www.linkedin.com/in/shubham-vy",
-        label: "LinkedIn",
-    },
-    {
-        icon: FaXTwitter,
-        href: "https://x.com/vyagh_vy",
-        label: "X (Twitter)",
-    },
-    {
-        icon: FiMail,
-        href: "mailto:vyagh.vy@gmail.com",
-        label: "Email",
-    },
-];
 
 export default function Hero() {
     const [isOwner, setIsOwner] = useState(false);

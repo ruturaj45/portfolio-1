@@ -197,14 +197,6 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
-    display: none;
-}
-
-body::after {
-    display: none;
-}
-
 /* ===========================
    TYPOGRAPHY
    =========================== */

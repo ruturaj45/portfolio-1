@@ -1,70 +1,47 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FiMapPin, FiCode } from "react-icons/fi";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Terminal from "./Terminal";
 import styles from "./About.module.css";
 
 export default function About() {
+    const [mode, setMode] = useState<"commands" | "markdown">("commands");
+
     return (
         <section className={`section ${styles.about}`} id="about">
             <div className="container">
                 <motion.div
-                    className="section-header"
+                    className={`section-header ${styles.header}`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <span className="section-title">About</span>
-                    <h2>Who I am</h2>
+                    <div className={styles.headerRow}>
+                        <span className="section-title">About</span>
+                        <h2>Who I am</h2>
+                        <button
+                            className={styles.viewToggle}
+                            onClick={() => setMode(mode === "commands" ? "markdown" : "commands")}
+                            title={mode === "commands" ? "Switch to text view" : "Switch to terminal view"}
+                        >
+                            {mode === "commands" ? "Text view" : "Terminal view"}
+                        </button>
+                    </div>
                 </motion.div>
 
-                <div className={styles.content}>
+                <AnimatePresence mode="wait">
                     <motion.div
-                        className={styles.bio}
+                        key={mode}
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.4 }}
                     >
-                        <p>
-                            Full Stack AI Engineer building production systems from data pipelines to user-facing applications.
-                        </p>
-                        <p>
-                            Contributing to open source projects with focus on testing infrastructure, feature development, and code quality improvements.
-                        </p>
+                        <Terminal mode={mode} onModeChange={setMode} />
                     </motion.div>
-
-                    <motion.div
-                        className={styles.meta}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        <div className={styles.metaItem}>
-                            <FiMapPin className={styles.metaIcon} />
-                            <div>
-                                <span className={styles.metaLabel}>
-                                    Location
-                                </span>
-                                <span className={styles.metaValue}>
-                                    New Delhi, India
-                                </span>
-                            </div>
-                        </div>
-
-                        <div className={styles.metaItem}>
-                            <FiCode className={styles.metaIcon} />
-                            <div>
-                                <span className={styles.metaLabel}>Focus</span>
-                                <span className={styles.metaValue}>
-                                    Full Stack AI Engineering • Open Source
-                                </span>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
+                </AnimatePresence>
             </div>
         </section>
     );

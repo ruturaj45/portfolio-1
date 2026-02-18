@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ParticleField.module.css";
 
 interface Particle {
@@ -17,8 +17,23 @@ export default function ParticleField() {
     const mouseRef = useRef({ x: 0, y: 0 });
     const particlesRef = useRef<Particle[]>([]);
     const animationRef = useRef<number>(0);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        // Check for touch device
+        const checkMobile = () => {
+            setIsMobile(window.matchMedia("(pointer: coarse)").matches);
+        };
+        
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    useEffect(() => {
+        if (isMobile) return; // Don't run on mobile
+        
         const canvas = canvasRef.current;
         if (!canvas) return;
 
@@ -154,7 +169,9 @@ export default function ParticleField() {
                 cancelAnimationFrame(animationRef.current);
             }
         };
-    }, []);
+    }, [isMobile]);
+
+    if (isMobile) return null;
 
     return <canvas ref={canvasRef} className={styles.canvas} />;
 }

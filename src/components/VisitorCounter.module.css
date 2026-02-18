@@ -1,0 +1,52 @@
+.counterWrapper {
+    position: relative;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    transition: all var(--transition-fast);
+}
+
+.counter:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.count {
+    font-weight: 500;
+}
+
+.label {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .counter {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .label {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter {
+        padding: 4px 8px;
+        font-size: 0.6875rem;
+    }
+    
+    .label {
+        font-size: 0.625rem;
+    }
+}

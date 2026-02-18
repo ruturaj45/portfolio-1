@@ -21,6 +21,44 @@
   --border: rgba(16, 185, 129, 0.12);
   --border-hover: rgba(16, 185, 129, 0.25);
 
+  /* RGB versions for rgba() usage */
+  --bg-primary-rgb: 10, 15, 13;
+  --bg-secondary-rgb: 13, 21, 18;
+
+  /* Heatmap colors */
+  --heatmap-0: rgba(16, 185, 129, 0.05);
+  --heatmap-1: rgba(16, 185, 129, 0.25);
+  --heatmap-2: rgba(16, 185, 129, 0.5);
+  --heatmap-3: rgba(16, 185, 129, 0.75);
+  --heatmap-4: rgba(16, 185, 129, 1);
+
+  /* Markdown syntax highlighting - Tokyo Night Storm */
+  --md-bg: #1a1b26;
+  --md-bg-highlight: #24283b;
+  --md-fg: #a9b1d6;
+  --md-comment: #565f89;
+  --md-cyan: #7dcfff;
+  --md-green: #9ece6a;
+  --md-orange: #ff9e64;
+  --md-purple: #bb9af7;
+  --md-red: #f7768e;
+  --md-yellow: #e0af68;
+  --md-blue: #7aa2f7;
+  --md-magenta: #bb9af7;
+  --md-line-number: #565f89;
+  --md-heading: #7dcfff;
+  --md-bullet: #565f89;
+  --md-bold: #ff9e64;
+  --md-text: #c0caf5;
+
+  /* PR Status Colors */
+  --status-merged: #a855f7;
+  --status-merged-bg: rgba(168, 85, 247, 0.15);
+  --status-open: #22c55e;
+  --status-open-bg: rgba(34, 197, 94, 0.15);
+  --status-closed: #ef4444;
+  --status-closed-bg: rgba(239, 68, 68, 0.15);
+
   /* Typography */
   --font-serif: "Instrument Serif", Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -69,6 +107,44 @@
   
   --border: rgba(16, 185, 129, 0.25);
   --border-hover: rgba(16, 185, 129, 0.5);
+
+  /* RGB versions for rgba() usage */
+  --bg-primary-rgb: 255, 255, 255;
+  --bg-secondary-rgb: 248, 250, 249;
+
+  /* Heatmap colors */
+  --heatmap-0: #dcfce7;
+  --heatmap-1: #86efac;
+  --heatmap-2: #4ade80;
+  --heatmap-3: #22c55e;
+  --heatmap-4: #15803d;
+
+  /* Markdown syntax highlighting - Tokyo Night Day */
+  --md-bg: #d5d6db;
+  --md-bg-highlight: #cbccd1;
+  --md-fg: #343b58;
+  --md-comment: #9699a3;
+  --md-cyan: #0f4b6e;
+  --md-green: #485e30;
+  --md-orange: #8f5e17;
+  --md-purple: #5a4a78;
+  --md-red: #8c4351;
+  --md-yellow: #8f5e17;
+  --md-blue: #34548a;
+  --md-magenta: #5a4a78;
+  --md-line-number: #9699a3;
+  --md-heading: #0f4b6e;
+  --md-bullet: #9699a3;
+  --md-bold: #8f5e17;
+  --md-text: #343b58;
+
+  /* PR Status Colors - Light Mode */
+  --status-merged: #9333ea;
+  --status-merged-bg: rgba(168, 85, 247, 0.12);
+  --status-open: #16a34a;
+  --status-open-bg: rgba(34, 197, 94, 0.12);
+  --status-closed: #dc2626;
+  --status-closed-bg: rgba(239, 68, 68, 0.12);
 }
 
 .light html {
@@ -361,7 +437,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 var(--space-md);
+    padding: 0 20px;
   }
 
   .section {
@@ -375,7 +451,7 @@ a:hover {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 var(--space-sm);
+    padding: 0 20px;
   }
 
   .section {

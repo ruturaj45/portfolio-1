@@ -9,7 +9,7 @@
 }
 
 .header.scrolled {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(var(--bg-primary-rgb), 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
@@ -30,6 +30,8 @@
 
 .logoText {
     color: var(--accent);
+    position: relative;
+    display: inline-block;
 }
 
 .logoAccent {
@@ -49,6 +51,17 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
+}
+
+.counter {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: transparent !important;
+}
+
+.counter:hover {
+    background: var(--accent) !important;
+    color: white !important;
 }
 
 .link {
@@ -91,7 +104,7 @@
     display: none;
     flex-direction: column;
     padding: var(--space-md) var(--space-lg);
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(var(--bg-primary-rgb), 0.95);
     backdrop-filter: blur(12px);
     border-top: 1px solid var(--border);
 }

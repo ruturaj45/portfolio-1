@@ -1,0 +1,352 @@
+.terminalContainer {
+    position: relative;
+    width: 100%;
+}
+
+.terminal {
+    background: #1a1b26;
+    border: 1px solid #24283b;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    font-family: var(--font-mono);
+}
+
+.light .terminal {
+    background: #f4f4f9;
+    border: 1px solid #e1e2e7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.terminalHeader {
+    display: flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background: #16161e;
+    border-bottom: 1px solid #24283b;
+    gap: var(--space-md);
+}
+
+.light .terminalHeader {
+    background: #eaeaef;
+    border-bottom: 1px solid #d8d9de;
+}
+
+.terminalControls {
+    display: flex;
+    gap: 6px;
+}
+
+.control {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+}
+
+.control:first-child {
+    background: #ff5f56;
+}
+
+.control:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.control:nth-child(3) {
+    background: #27c93f;
+}
+
+.terminalTitle {
+    font-size: 0.75rem;
+    color: #565f89;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.light .terminalTitle {
+    color: #6b6f85;
+    font-weight: 500;
+}
+
+.terminalBody {
+    padding: var(--space-lg);
+    min-height: 280px;
+}
+
+.commandBlock {
+    margin-bottom: var(--space-md);
+}
+
+.commandBlock:last-child {
+    margin-bottom: 0;
+}
+
+.commandLine {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.prompt {
+    display: flex;
+    gap: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.promptUser {
+    color: #7dcfff;
+}
+
+.light .promptUser {
+    color: #006d8f;
+    font-weight: 600;
+}
+
+.promptAt {
+    color: #565f89;
+}
+
+.light .promptAt {
+    color: #7a7d91;
+}
+
+.promptHost {
+    color: #bb9af7;
+}
+
+.light .promptHost {
+    color: #5e4a9c;
+    font-weight: 600;
+}
+
+.promptSymbol {
+    color: #a9b1d6;
+    margin-left: 4px;
+    margin-right: 8px;
+}
+
+.light .promptSymbol {
+    color: #4a4f69;
+}
+
+.command {
+    color: #c0caf5;
+    font-size: 0.875rem;
+}
+
+.light .command {
+    color: #1a1b26;
+    font-weight: 500;
+}
+
+.output {
+    color: #a9b1d6;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-left: 0;
+    padding-left: 0;
+    white-space: pre-wrap;
+}
+
+.light .output {
+    color: #2a2b36;
+    font-weight: 400;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background: #7dcfff;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+.light .cursor {
+    background: #0085b3;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.toggleButton {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.toggleButton:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .terminalBody {
+        padding: var(--space-md);
+        min-height: 240px;
+    }
+
+    .command,
+    .prompt {
+        font-size: 0.8125rem;
+    }
+
+    .output {
+        font-size: 0.875rem;
+    }
+
+    .toggleButton {
+        bottom: -36px;
+        font-size: 0.6875rem;
+        padding: 4px var(--space-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .terminalBody {
+        padding: var(--space-sm);
+        min-height: 220px;
+    }
+
+    .commandLine {
+        flex-wrap: wrap;
+    }
+
+    .command {
+        font-size: 0.75rem;
+    }
+
+    .output {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Markdown Styles - Tokyo Night Theme */
+.markdownLine {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 2px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.lineNumber {
+    color: #565f89;
+    width: 32px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 12px;
+    user-select: none;
+    font-variant-numeric: tabular-nums;
+    line-height: inherit;
+}
+
+.light .lineNumber {
+    color: #8b8ea3;
+}
+
+.lineContent {
+    flex: 1;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: inherit;
+}
+
+.lineContent.heading {
+    color: #7dcfff;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.light .lineContent.heading {
+    color: #006d8f;
+    font-weight: 700;
+}
+
+.lineContent.subheading {
+    color: #7dcfff;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.light .lineContent.subheading {
+    color: #006d8f;
+    font-weight: 600;
+}
+
+.lineContent.bullet {
+    color: #a9b1d6;
+}
+
+.light .lineContent.bullet {
+    color: #3a3b46;
+}
+
+.lineContent.text {
+    color: #c0caf5;
+}
+
+.light .lineContent.text {
+    color: #2a2b36;
+}
+
+.bullet {
+    color: #565f89;
+}
+
+.light .bullet {
+    color: #8b8ea3;
+}
+
+.statusLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid #24283b;
+}
+
+.light .statusLine {
+    border-top: 1px solid #d8d9de;
+}
+
+.statusText {
+    color: #7dcfff;
+    font-size: 0.875rem;
+}
+
+.light .statusText {
+    color: #006d8f;
+    font-weight: 600;
+}
+
+.vimMode {
+    color: #565f89;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.light .vimMode {
+    color: #8b8ea3;
+}

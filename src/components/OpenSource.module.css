@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     gap: var(--space-2xl);
+    margin-top: var(--space-xl);
     margin-bottom: var(--space-lg);
     min-height: 80px;
 }
@@ -69,6 +70,20 @@
     font-weight: 600;
     font-family: var(--font-mono);
     transition: transform var(--transition-fast);
+    color: var(--text-primary);
+}
+
+/* Status-specific colors */
+.statItem.merged .statCount {
+    color: var(--status-merged);
+}
+
+.statItem.open .statCount {
+    color: var(--status-open);
+}
+
+.statItem.closed .statCount {
+    color: var(--status-closed);
 }
 
 .statItem:hover .statCount {
@@ -187,18 +202,18 @@
 }
 
 .prStatus.merged {
-    background: rgba(168, 85, 247, 0.15);
-    color: #a855f7;
+    background: var(--status-merged-bg);
+    color: var(--status-merged);
 }
 
 .prStatus.open {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
+    background: var(--status-open-bg);
+    color: var(--status-open);
 }
 
 .prStatus.closed {
-    background: rgba(239, 68, 68, 0.15);
-    color: #ef4444;
+    background: var(--status-closed-bg);
+    color: var(--status-closed);
 }
 
 /* Load More Button */

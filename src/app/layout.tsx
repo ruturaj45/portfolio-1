@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-import GrainOverlay from "@/components/ui/GrainOverlay";
 import ParticleField from "@/components/ui/ParticleField";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -68,7 +67,6 @@ export default function RootLayout({
                 <ThemeProvider>
                     <ParticleField />
                     <SmoothScroll />
-                    <GrainOverlay />
                     {children}
                 </ThemeProvider>
             </body>

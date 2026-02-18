@@ -1,10 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiDownload } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import styles from "./Hero.module.css";
 import Image from "next/image";
+
+const OWNER_KEY = "portfolio_owner";
 
 const socialLinks = [
     {
@@ -30,6 +33,20 @@ const socialLinks = [
 ];
 
 export default function Hero() {
+    const [isOwner, setIsOwner] = useState(false);
+
+    useEffect(() => {
+        const checkOwnerMode = () => {
+            const ownerFlag = localStorage.getItem(OWNER_KEY);
+            setIsOwner(ownerFlag === "true");
+        };
+
+        checkOwnerMode();
+        window.addEventListener("ownerModeChange", checkOwnerMode);
+        
+        return () => window.removeEventListener("ownerModeChange", checkOwnerMode);
+    }, []);
+
     return (
         <section className={styles.hero} id="hero">
             <div className={`container ${styles.container}`}>
@@ -65,7 +82,9 @@ export default function Hero() {
                             <div className={styles.statusBeat}></div>
                             <span className="mono">Available for opportunities</span>
                         </div>
-                        <h1 className={styles.name}>Vyagh</h1>
+                        <h1 className={`${styles.name} ${isOwner ? styles.ownerMode : ""}`}>
+                            Vyagh
+                        </h1>
                         <p className={styles.tagline}>
                             AI Engineer & Open Source Contributor
                         </p>
@@ -103,6 +122,15 @@ export default function Hero() {
                                     <link.icon />
                                 </a>
                             ))}
+                            <a
+                                href="/resume.pdf"
+                                download
+                                className={styles.iconBtn}
+                                aria-label="Download Resume"
+                                title="Download Resume"
+                            >
+                                <FiDownload />
+                            </a>
                         </div>
                     </motion.div>
                 </div>

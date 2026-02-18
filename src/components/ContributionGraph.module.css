@@ -1,0 +1,173 @@
+.container {
+    margin-top: var(--space-2xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-xl);
+    border-bottom: 1px solid var(--border);
+}
+
+.label {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.total {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+    min-width: 0;
+}
+
+.weeks {
+    display: flex;
+    gap: 3px;
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+}
+
+.week {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.day {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    transition: transform var(--transition-fast);
+    cursor: pointer;
+}
+
+.day:hover {
+    transform: scale(1.3);
+    outline: 1px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: var(--space-sm);
+}
+
+.legendLabel {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    margin: 0 var(--space-xs);
+}
+
+.legendDay {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.loading {
+    margin-top: var(--space-2xl);
+    padding: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingBar {
+    width: 40%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 0%,
+        var(--border) 50%,
+        var(--bg-secondary) 100%
+    );
+    background-size: 200% 100%;
+    border-radius: 2px;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: var(--space-xl);
+    }
+
+    .graph {
+        padding: var(--space-lg);
+    }
+
+    .weeks {
+        gap: 2px;
+    }
+
+    .week {
+        gap: 2px;
+    }
+
+    .day {
+        width: 8px;
+        height: 8px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: var(--space-md);
+    }
+
+    .day {
+        width: 6px;
+        height: 6px;
+    }
+
+    .weeks {
+        gap: 1.5px;
+    }
+
+    .week {
+        gap: 1.5px;
+    }
+
+    .total {
+        font-size: 0.75rem;
+    }
+}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiExternalLink, FiGitMerge, FiGitPullRequest, FiX } from "react-icons/fi";
+import ContributionGraph from "./ContributionGraph";
 import styles from "./OpenSource.module.css";
 
 interface PullRequest {
@@ -145,6 +146,7 @@ export default function OpenSource() {
             }
         } catch (error) {
             console.error('Error fetching GitHub PRs:', error);
+            console.error('GitHub API Error - Token may be invalid or expired. Check NEXT_PUBLIC_GITHUB_TOKEN environment variable.');
         } finally {
             setLoading(false);
         }
@@ -157,10 +159,23 @@ export default function OpenSource() {
         }));
     };
 
-    const statColors: { label: string, count: number, color: string, category: Category }[] = [
-        { label: "Merged", count: prStats.merged, color: "#a855f7", category: "merged" },
-        { label: "Open", count: prStats.open, color: "#22c55e", category: "open" },
-        { label: "Closed", count: prStats.closed, color: "#ef4444", category: "closed" },
+    // Calculate stats based on selected org
+    const getFilteredStats = (): PRStats => {
+        if (!selectedOrg) return prStats;
+        
+        return {
+            merged: allPRs.merged.filter(pr => pr.repo.startsWith(selectedOrg + '/')).length,
+            open: allPRs.open.filter(pr => pr.repo.startsWith(selectedOrg + '/')).length,
+            closed: allPRs.closed.filter(pr => pr.repo.startsWith(selectedOrg + '/')).length,
+        };
+    };
+
+    const filteredStats = getFilteredStats();
+
+    const statConfigs: { label: string, count: number, category: Category }[] = [
+        { label: "Merged", count: filteredStats.merged, category: "merged" },
+        { label: "Open", count: filteredStats.open, category: "open" },
+        { label: "Closed", count: filteredStats.closed, category: "closed" },
     ];
 
     // Filter PRs by selected org and active category
@@ -172,7 +187,7 @@ export default function OpenSource() {
     const hasMore = displayCount[activeCategory] < filteredPRs.length;
 
     return (
-        <section className={`section ${styles.openSource}`} id="opensource">
+        <section className={`section ${styles.openSource}`} id="open-source">
             <div className="container">
                 <motion.div
                     className={styles.centered}
@@ -185,6 +200,9 @@ export default function OpenSource() {
                     <h2>Proof of Work</h2>
                 </motion.div>
 
+                {/* Contribution Graph */}
+                <ContributionGraph />
+
                 {/* PR Stats - Clickable */}
                 <motion.div
                     className={styles.stats}
@@ -196,13 +214,13 @@ export default function OpenSource() {
                     {loading ? (
                         <div className={styles.loading}>Loading PR stats...</div>
                     ) : (
-                        statColors.map((stat) => (
+                        statConfigs.map((stat) => (
                             <button
                                 key={stat.label}
-                                className={`${styles.statItem} ${activeCategory === stat.category ? styles.active : ''}`}
+                                className={`${styles.statItem} ${styles[stat.category]} ${activeCategory === stat.category ? styles.active : ''}`}
                                 onClick={() => setActiveCategory(stat.category)}
                             >
-                                <span className={styles.statCount} style={{ color: stat.color }}>
+                                <span className={styles.statCount}>
                                     {stat.count}
                                 </span>
                                 <span className={styles.statLabel}>{stat.label} PRs</span>

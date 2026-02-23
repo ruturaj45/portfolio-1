@@ -37,7 +37,7 @@ export default function Hero() {
                     <div className={styles.imageContainer}>
                         <Image
                             src="/pfp.png"
-                            alt="Vyagh"
+                            alt="Ruturaj"
                             fill
                             sizes="(max-width: 480px) 100px, (max-width: 900px) 150px, 280px"
                             className={styles.profileImage}
@@ -60,10 +60,10 @@ export default function Hero() {
                             <span className="mono">Available for opportunities</span>
                         </div>
                         <h1 className={`${styles.name} ${isOwner ? styles.ownerMode : ""}`}>
-                            Vyagh
+                            Ruturaj Barik
                         </h1>
                         <p className={styles.tagline}>
-                            AI Engineer & Open Source Contributor
+                            Web devloper & Cloud Engineer
                         </p>
                     </motion.div>
 
@@ -73,8 +73,7 @@ export default function Hero() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.8 }}
                     >
-                        I build AI-powered tools and contribute to open source.
-                        Currently focused on RAG systems, ML pipelines, and developer tooling.
+                        I building things that actually work, mostly around Linux, frontend systems, cloud stuff, and scaling ideas without overengineering them. I care about code that's clean, fast, and useful in the real world.
                     </motion.p>
 
                     <motion.div
@@ -100,7 +99,7 @@ export default function Hero() {
                                 </a>
                             ))}
                             <a
-                                href="/resume.pdf"
+                                href="/c:\Users\rutur\Downloads\Ruturaj Resume-1.pdf"
                                 download
                                 className={styles.iconBtn}
                                 aria-label="Download Resume"

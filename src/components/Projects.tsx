@@ -12,6 +12,7 @@ import {
     SiFastapi,
     SiJavascript,
     SiStreamlit,
+    SiDjango,
 } from "react-icons/si";
 import styles from "./Projects.module.css";
 import SpotlightCard from "./ui/SpotlightCard";
@@ -28,54 +29,53 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "Recall",
-        summary: "Offline RAG notes search app",
+        title: "Ai Trip Planner",
+        summary: "Ai travel assistant for personalized trip planning",
         points: [
-            "FAISS + MiniLM embeddings",
-            "Ollama via LangChain",
+            "Python + Streamlit frontend",
+            "GeminiAPI for LLM + multimodal reasoning",
             "FastAPI + terminal UI",
         ],
         tech: [
             { name: "Python", icon: SiPython },
-            { name: "FastAPI", icon: SiFastapi },
-            { name: "JavaScript", icon: SiJavascript },
+            { name: "GeminiAPI", icon: SiFastapi },
+            { name: "Streamlit", icon: SiStreamlit },
         ],
-        github: "https://github.com/vyagh/Recall",
+        github: "https://github.com/ruturaj45/Ai_Trip_Planner",
         live: null,
         status: "dev",
     },
     {
-        title: "TrackType",
-        summary: "Music genre classifier",
+        title: "Smart Fitness Buddy",
+        summary: "Your AI-powered fitness companion for personalized workout plans",
         points: [
-            "10 genres on GTZAN dataset",
-            "57 Librosa features",
-            "XGBoost + majority voting",
+            "Build with ai agents",
+            "Integrates with fitness APIs for real-time data",
+            "Granite model , LLM , RAG",
             "~91% test accuracy",
         ],
         tech: [
             { name: "Python", icon: SiPython },
-            { name: "Scikit-learn", icon: SiScikitlearn },
-            { name: "Streamlit", icon: SiStreamlit },
+            { name: "IBM Cloud", icon: SiScikitlearn },
         ],
-        github: "https://github.com/vyagh/TrackType",
+        github: "https://github.com/ruturaj45/Smart_Fitness_Buddy",
         live: null,
         status: null,
     },
     {
-        title: "Kubefy",
-        summary: "Dockerfile → K8s manifests CLI",
+        title: "E-Shopify",
+        summary: "Web app for managing e-commerce operations",
         points: [
-            "Custom AST parser",
+            "fully worked on backend APIs and database design",
             "Generates Deployments + Services",
-            "Single binary, no deps",
+        
         ],
         tech: [
-            { name: "Go", icon: SiGo },
-            { name: "Kubernetes", icon: SiKubernetes },
-            { name: "Docker", icon: SiDocker },
+            { name: "Python", icon: SiPython },
+            { name: "Django", icon: SiDjango },
+    
         ],
-        github: "https://github.com/vyagh/Kubefy",
+        github: "https://github.com/ruturaj45/Ecommerce-Website",
         live: null,
         status: null,
     },

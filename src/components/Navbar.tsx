@@ -49,8 +49,8 @@ export default function Navbar() {
         >
             <nav className={`container ${styles.nav}`}>
                 <a href="#" className={styles.logo}>
-                    <span className={styles.logoText}>V</span>
-                    <span className={styles.logoAccent}>yagh</span>
+                    <span className={styles.logoText}>R</span>
+                    <span className={styles.logoAccent}>uturaj</span>
                 </a>
 
                 <div className={styles.links}>

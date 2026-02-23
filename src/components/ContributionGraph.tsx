@@ -33,7 +33,7 @@ export default function ContributionGraph() {
 
             const query = `
                 query {
-                    user(login: "vyagh") {
+                    user(login: "ruturaj45") {
                         contributionsCollection {
                             contributionCalendar {
                                 totalContributions

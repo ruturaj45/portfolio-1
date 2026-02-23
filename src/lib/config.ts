@@ -9,8 +9,8 @@ export interface SocialLink {
 }
 
 export const socialLinks: SocialLink[] = [
-    { icon: FiGithub, href: "https://github.com/vyagh", label: "GitHub" },
-    { icon: FiLinkedin, href: "https://www.linkedin.com/in/shubham-vy", label: "LinkedIn" },
-    { icon: FaXTwitter, href: "https://x.com/vyagh_vy", label: "X (Twitter)" },
-    { icon: FiMail, href: "mailto:vyagh.vy@gmail.com", label: "Email" },
+    { icon: FiGithub, href: "https://github.com/ruturaj45", label: "GitHub" },
+    { icon: FiLinkedin, href: "https://www.linkedin.com/in/ruturaj-barik-083a9425b/", label: "LinkedIn" },
+    { icon: FaXTwitter, href: "https://x.com/ruturajbarik45", label: "X (Twitter)" },
+    { icon: FiMail, href: "mailto:ruturajxbarik@gmail.com", label: "Email" },
 ];

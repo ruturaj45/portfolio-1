@@ -12,10 +12,10 @@ interface Command {
 }
 
 const commands: Command[] = [
-    { input: "whoami", output: "Full Stack AI Engineer", delay: 800 },
-    { input: "location --current", output: "New Delhi, India", delay: 600 },
-    { input: "stack --list", output: "Python • TypeScript • React • Node.js • Go • Java", delay: 800 },
-    { input: "focus --areas", output: "Full Stack AI • Open Source • Production Systems", delay: 700 },
+    { input: "whoami", output: "Full Stack Web devloper & Cloud Engineer", delay: 800 },
+    { input: "location --current", output: "Jajpur, India", delay: 600 },
+    { input: "stack --list", output: "Python • TypeScript • React • Node.js ", delay: 800 },
+    { input: "focus --areas", output: "Full Stack AI • AWS & Cloud Systems • Production Systems", delay: 700 },
     { input: "interests --verbose", output: "LLMs • RAG Systems • Data Pipelines • Testing Infrastructure", delay: 900 },
     { input: "status --work", output: "Open to opportunities", delay: 600 },
 ];
@@ -33,14 +33,14 @@ const markdownContent: MarkdownLine[] = [
     { content: "", type: "text" },
     { content: "## Focus Areas", type: "subheading" },
     { content: "- Full Stack AI Engineering", type: "bullet" },
-    { content: "- Open Source Contribution", type: "bullet" },
+    { content: "- AWS , Cloud Systems", type: "bullet" },
     { content: "- Production Systems", type: "bullet" },
     { content: "", type: "text" },
     { content: "## Location", type: "subheading" },
     { content: "New Delhi, India", type: "text" },
     { content: "", type: "text" },
     { content: "## Tech Stack", type: "subheading" },
-    { content: "Python • TypeScript • React • Node.js • Go • Java", type: "text" },
+    { content: "Python • TypeScript • React • Node.js ", type: "text" },
     { content: "", type: "text" },
     { content: "## Interests", type: "subheading" },
     { content: "LLMs • RAG Systems • Data Pipelines • Testing Infrastructure", type: "text" },
@@ -212,7 +212,7 @@ export default function Terminal({ mode = "commands", onModeChange }: TerminalPr
                                 <div className={styles.commandBlock}>
                                     <div className={styles.commandLine}>
                                         <span className={styles.prompt}>
-                                            <span className={styles.promptUser}>vyagh</span>
+                                            <span className={styles.promptUser}>ruturaj</span>
                                             <span className={styles.promptAt}>@</span>
                                             <span className={styles.promptHost}>portfolio</span>
                                             <span className={styles.promptSymbol}>:~$</span>

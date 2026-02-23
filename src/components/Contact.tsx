@@ -19,11 +19,11 @@ export default function Contact() {
                     <h2>Get in Touch</h2>
 
                     <a
-                        href="mailto:vyagh.vy@gmail.com"
+                        href="mailto:ruturajxbarik@gmail.com"
                         className={styles.emailLink}
                     >
                         <FiMail />
-                        vyagh.vy@gmail.com
+                        ruturajxbarik@gmail.com
                     </a>
                 </motion.div>
             </div>

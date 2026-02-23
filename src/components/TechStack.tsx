@@ -22,6 +22,7 @@ import {
   SiJavascript,
   SiGo,
   SiApache,
+  SiAmazonwebservices,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { VscAzure } from "react-icons/vsc";
@@ -38,7 +39,7 @@ interface TechItem {
 const row1Techs: TechItem[] = [
   { id: "python", name: "Python", icon: SiPython, category: "languages" },
   { id: "nextjs", name: "Next.js", icon: SiNextdotjs, category: "frontend" },
-  { id: "docker", name: "Docker", icon: SiDocker, category: "devops" },
+  { id: "AWS", name: "AWS", icon: SiAmazonwebservices, category: "devops" },
   { id: "typescript", name: "TypeScript", icon: SiTypescript, category: "languages" },
   { id: "mongodb", name: "MongoDB", icon: SiMongodb, category: "databases" },
   { id: "react", name: "React", icon: SiReact, category: "frontend" },

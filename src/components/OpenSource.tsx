@@ -47,7 +47,7 @@ export default function OpenSource() {
             // Query to get accurate all-time counts and recent PRs
             const query = `
                 query {
-                    user(login: "vyagh") {
+                    user(login: "ruturaj45") {
                         merged: pullRequests(states: MERGED) {
                             totalCount
                         }
@@ -318,7 +318,7 @@ export default function OpenSource() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                 >
                     <a
-                        href="https://github.com/vyagh"
+                        href="https://github.com/ruturaj45"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.profileBtn}

@@ -24,7 +24,7 @@ export default function Footer() {
                     ))}
                 </div>
                 <p className={styles.copyright}>
-                    © {currentYear} Vyagh
+                    © {currentYear} Ruturaj
                 </p>
             </div>
         </footer>

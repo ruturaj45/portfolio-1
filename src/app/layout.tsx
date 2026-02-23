@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Vyagh | Full Stack AI Engineer",
+    title: "Ruturaj | Full Stack AI Engineer",
     description:
         "I ship AI products that work. Open source contributor at Sugar Labs Music Blocks.",
     keywords: [
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
         "Music Blocks",
         "GSoC",
     ],
-    authors: [{ name: "Vyagh" }],
+    authors: [{ name: "Ruturaj" }],
     openGraph: {
-        title: "Vyagh | Full Stack AI Engineer",
+        title: "Ruturaj | Full Stack AI Engineer",
         description:
             "I ship AI products that work. Open source contributor at Sugar Labs.",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Vyagh | Full Stack AI Engineer",
+        title: "Ruturaj | Full Stack AI Engineer",
         description:
             "I ship AI products that work. Open source contributor at Sugar Labs.",
     },
